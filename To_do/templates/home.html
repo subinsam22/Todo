@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+
+<div class="container" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+
+        <div class="col-md-12">
+            <h3>Incomplete Tasks</h3>
+            {% for i in task %}
+            <div class="shadow card">
+                <div class="card-body">
+                    <a href="{%url 'cdvdetail' i.id %}"> <h4 class="card-title">{{i.name}} </h4></a><br>
+                    <p> <b> {{i.priority}} </b> </p>
+                    <p> <b> {{i.date}} </b> </p>
+
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
